@@ -16,7 +16,7 @@ export const emailSender = async (req, res) => {
             pass: 'gcoydoxcahzrkqon',
         },
     });
-    console.log(req.body);
+    // console.log(req.body);
     const { email } = req.body;
         
     try {

@@ -51,7 +51,7 @@ export const userLogin = async (req, res) => {
             return res.status(404).json({ error: 'Invalid Password' })
         }
         const token = jwt.sign({ _id: user._id }, process.env.SECRETKEY)
-        console.log(user);
+        
         res.status(200).json({ message: 'Logged in Sucessfully', token:token })
     } catch (error) {
         console.log('UserLogin controller Error', error);
@@ -176,8 +176,7 @@ export const resetPassword = async (req, res) => {
         const hashpassword = await bcrypt.hash(req.body.password, 10)
        
         const user = await User.findOne({ email:req.body.email })
-        console.log(user);
-
+        
         if (!user) {
             res.status(200).json({ message: 'User not found' });
             return res.status(404).json({ message: 'User not found' });
