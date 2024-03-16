@@ -30,7 +30,7 @@ export const emailSender = async (req, res) => {
       
 
               
-        const resetLink = `http://localhost:3000/reset?string=${randomString}`;    
+        const resetLink = `https://job-questions.vercel.app/reset?string=${randomString}`;    
 
         const emailDetails = {
             from: "vimalfsd@gmail.com",
